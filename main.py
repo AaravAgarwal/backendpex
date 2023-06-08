@@ -3,11 +3,11 @@ from pydantic import BaseModel
 import serial
 
 app = FastAPI()
-serial_port = "Motor_org"  
-serial_port2 = "Motor_mir"
+serial_port = "motorORG"  
+serial_port2 = "motorMIR"
 
-ser = serial.Serial(serial_port, 9600, timeout=1)
-ser2 = serial.Serial(serial_port2, 9600, timeout=1)
+ser = serial.Serial(serial_port, 115200, timeout=1)
+ser2 = serial.Serial(serial_port2, 115200, timeout=1)
 
 class SliderValue(BaseModel):
     value: int
